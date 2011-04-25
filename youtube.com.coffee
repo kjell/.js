@@ -1,0 +1,1 @@
+$(".ad-div, .mastad, .homepage-side-block").hide()
