@@ -32,19 +32,9 @@ block = (message) ->
   $("body").after(p)
   
 
-time_wasters = [
-  "metafilter.com",
-  "ask.metafilter.com",
-  "news.ycombinator.com",
-  "reddit.com",
-  "kottke.org",
-  "daringfireball.net",
-  "macrumors.com",
-  "appleinsider.com",
-  "9to5mac.com",
-  "packlite.tumblr.com",
-  "last.fm"
-]
+time_wasters = "metafilter.com ask.metafilter.com news.ycombinator.com 
+reddit.com kottke.org daringfireball.net macrumors.com appleinsider.com 
+9to5mac.com packlite.tumblr.com last.fm"
 
-if $.inArray(location.host.replace('www.',''), time_wasters) > -1
+if time_wasters.indexOf(location.host.replace('www.','')) > -1
   block "Do you really want to read this shit?"
