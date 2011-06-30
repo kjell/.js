@@ -1,9 +1,9 @@
 banner = (text) ->
   $("<p>#{text}</p>").
   css({
-    width: '20%', 
-    margin: '10em auto', 
-    border: '1em solid #369', 
+    width: '20%',
+    margin: '10em auto',
+    border: '1em solid #369',
     'border-radius': '1em',
     padding: '1em 0',
     'text-align': 'center',
@@ -30,10 +30,10 @@ block = (message) ->
     $(this).hide()
     $("body").show()
   $("body").after(p)
-  
 
-time_wasters = "metafilter.com ask.metafilter.com news.ycombinator.com 
-reddit.com kottke.org daringfireball.net macrumors.com appleinsider.com 
+
+time_wasters = "metafilter.com ask.metafilter.com news.ycombinator.com
+reddit.com kottke.org daringfireball.net macrumors.com appleinsider.com
 9to5mac.com packlite.tumblr.com last.fm"
 
 if time_wasters.indexOf(location.host.replace('www.','')) > -1
