@@ -38,3 +38,8 @@ reddit.com kottke.org daringfireball.net macrumors.com appleinsider.com
 
 if time_wasters.indexOf(location.host.replace('www.','')) > -1
   block "Do you really want to read this shit?"
+
+$("#readabilityContainer").remove()
+
+style = (selector, styles) ->
+  $("<style type='text/css'>#{selector} { #{styles} }</style>").appendTo("head")
