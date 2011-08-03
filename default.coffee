@@ -37,7 +37,8 @@ block = (message) ->
 
 time_wasters = "metafilter.com ask.metafilter.com news.ycombinator.com
 reddit.com kottke.org daringfireball.net macrumors.com appleinsider.com
-9to5mac.com packlite.tumblr.com last.fm"
+9to5mac.com packlite.tumblr.com hckrnews.com macobserver.com
+hacker-newspaper.gilesb.com techcrunch.com buzzfeed.com "
 
 if time_wasters.indexOf(location.host.replace('www.','')) > -1
   block "Do you really want to read this shit?"
