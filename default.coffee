@@ -41,7 +41,8 @@ reddit.com kottke.org daringfireball.net macrumors.com appleinsider.com
 hacker-newspaper.gilesb.com techcrunch.com buzzfeed.com "
 
 if time_wasters.indexOf(location.host.replace('www.','')) > -1
-  block "Do you really want to read this shit?"
+  unless document.referrer.indexOf('instapaper.com') > -1
+    block "This is your life and it's ending one minute at a time."
 
 $("#readabilityContainer").remove()
 
