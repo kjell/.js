@@ -23,7 +23,7 @@ banner = (text) ->
       })
   )
 
-block = (message) ->
+soft_block = (message) ->
   $("body").hide()
   p = banner(message)
   p.dblclick ->
@@ -31,6 +31,9 @@ block = (message) ->
     $("body").show()
   $("body").after(p)
 
+block = (message) ->
+  $("body").hide()
+  $("body").after banner(message)
 
 time_wasters = "metafilter.com ask.metafilter.com news.ycombinator.com
 reddit.com kottke.org daringfireball.net macrumors.com appleinsider.com
