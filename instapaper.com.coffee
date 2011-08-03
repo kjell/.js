@@ -33,3 +33,4 @@ $("<a>Folders</a>").css({'font-weight': 'normal'}).appendTo("#categoryHeader").c
 fc = $("#folder_container")
 fc.appendTo("body").hide().css({position: 'fixed', right: '55px', top: '95px'})
 
+$('.movemenu').css {right: '481px', top: '23px'}
