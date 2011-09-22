@@ -1,0 +1,1 @@
+$("#titlepiece, #titlepiece + p").hide()
