@@ -5,6 +5,13 @@
 $(document).bind 'GM_AutoPagerizeNextPageLoaded', ->
   $("<script>attach_ajax();</script>").appendTo $("body")
   shift_click_to_archive_and_open()
+  shift_click_to_star_and_archive()
+
+archive = (box) ->
+  window.b = button = $(box).parents(".tableViewCell").find(".archiveButton")
+  id     = button.attr("id").substring(4)
+  href   = button.attr("href")
+  $.get("#{href}?ajax=1&el=tableViewCell#{id}")
 
 #
 # shift-click opens links in background tab and archives them
@@ -14,10 +21,7 @@ shift_click_to_archive_and_open = ->
   $("a.tableViewCellTitleLink").click (e) ->
     if e.shiftKey
       e.preventDefault()
-      button = $(@).parents(".tableViewCell").find(".archiveButton")
-      id     = button.attr("id").substring(4)
-      href   = button.attr("href")
-      $.get("#{href}?ajax=1&el=tableViewCell#{id}")
+      archive(@)
       window.open(@.href, '_blank')
       self.focus()
 
@@ -34,3 +38,20 @@ fc = $("#folder_container")
 fc.appendTo("body").hide().css({position: 'fixed', right: '55px', top: '95px'})
 
 $('.movemenu').css {right: '481px', top: '23px'}
+
+delay = (ms, func) -> setTimeout func, ms
+
+shift_click_to_star_and_archive = ->
+  $(".likeBox a").live 'click', (e) ->
+    # like_href = $(@).find('a:first').href
+    # e.preventDefault().stopPropagation()
+    if e.shiftKey
+      likebox = @
+      console.log 'shift'
+      # delay 5000, ->
+      #   console.log 'archiving'
+        # $.get like_href, {async: false}
+        # archive(likebox)
+    # return false
+
+shift_click_to_star_and_archive()
