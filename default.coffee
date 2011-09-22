@@ -57,8 +57,8 @@ comicize = (image_selector, next_selector) ->
     display: 'block',
     margin: '35px auto',
     'max-width': '97%',
-    height: '111em'
   })
+  $("html").css {height: '111em'}
 
   $(document).keydown (e) ->
     console.log e.keyCode
@@ -66,7 +66,7 @@ comicize = (image_selector, next_selector) ->
       when 13, 39
         next = $(next_selector).attr('href')
         document.location = next unless next == undefined
-      when 96
+      when 96, 27, 192
         min.hide()
         $('body').show()
       when 37
