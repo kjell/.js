@@ -71,3 +71,7 @@ comicize = (image_selector, next_selector) ->
         $('body').show()
       when 37
         history.go -1
+
+at = (path, block) ->
+  if window.location.pathname.match(path)
+    block()
