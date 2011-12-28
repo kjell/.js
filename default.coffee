@@ -41,8 +41,7 @@ reddit.com kottke.org daringfireball.net macrumors.com appleinsider.com
 hacker-newspaper.gilesb.com techcrunch.com buzzfeed.com "
 
 if time_wasters.indexOf(location.host.replace('www.','')) > -1
-  unless document.referrer.indexOf('instapaper.com') > -1 ||
-         document.referrer.indexOf('google.com') > -1
+  unless document.referrer.match(/instapaper|google|duckduckgo/)
     block "This is your life and it's ending one minute at a time."
 
 $("#readabilityContainer").remove()

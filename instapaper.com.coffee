@@ -55,3 +55,5 @@ shift_click_to_star_and_archive = ->
     # return false
 
 shift_click_to_star_and_archive()
+
+$("form[action='/search']").css({'width': '200px', float: 'right'}).appendTo("#categoryHeader")
