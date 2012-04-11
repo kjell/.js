@@ -71,6 +71,8 @@ comicize = (image_selector, next_selector) ->
       when 37
         history.go -1
 
+RegExp.quote = (str) -> (str+'').replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1")
+
 at = (path, block) ->
-  if window.location.pathname.match(path)
+  if window.location.href.match(RegExp.quote(path))
     block()
