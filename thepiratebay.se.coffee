@@ -1,4 +1,6 @@
-style '#social + a', 'display: none'
+#= require paginate
+
+style '#social + a, .ad, aside#bnr', 'display: none'
 style ".searchfield h1, #topright", 'visibility: hidden'
 style "h3, #foot", 'opacity: 0.1'
 
@@ -8,3 +10,6 @@ $ ->
       if e.keyCode == 68
         console.log $(".download a:first")
         $(".download a:first").click()
+
+paginate  "table#searchResult tr:last a:last", '#searchResult'
+style '.cursor a', 'color: #009;'
