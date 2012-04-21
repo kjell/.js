@@ -1,11 +1,4 @@
-#
-# reload ajax when auto-pagerizing
-#
-
-$(document).bind 'GM_AutoPagerizeNextPageLoaded', ->
-  $("<script>attach_ajax();</script>").appendTo $("body")
-  shift_click_to_archive_and_open()
-  shift_click_to_star_and_archive()
+#= require paginate
 
 archive = (box) ->
   window.b = button = $(box).parents(".tableViewCell").find(".archiveButton")
@@ -57,3 +50,8 @@ shift_click_to_star_and_archive = ->
 shift_click_to_star_and_archive()
 
 $("form[action='/search']").css({'width': '200px', float: 'right'}).appendTo("#categoryHeader")
+
+paginate '.pagination a:last', '#bookmark_list', ->
+  $("<script>attach_ajax();</script>").appendTo $("body")
+  shift_click_to_archive_and_open()
+  shift_click_to_star_and_archive()

@@ -36,7 +36,7 @@ $ ->
         when 'm' then number/60
 
     select_task = ->
-      task = $("select#task_id option:matches('Web')")
+      task = $("select#task_id option:matches('Web'), select#task_id options:matches('Software')")
       console.log task
       task.attr('selected', 'selected')
 
@@ -46,6 +46,8 @@ $ ->
 
     if match = $(@).val().match pattern
       [_, number, scale, project] = match
+      project = 'Software For Good' if project == 'clear'
+      project = 'vega' if project == 'instruments'
       rest = $(@).val().replace(pattern, '').strip()
       $("#entry_hours").val time_spent(number, scale)
       select_project(project)

@@ -42,5 +42,5 @@ hacker-newspaper.gilesb.com techcrunch.com buzzfeed.com "
 
 if time_wasters.indexOf(location.host.replace('www.','')) > -1
   console.log document.referrer
-  unless document.referrer.match(/instapaper|google|duckduckgo/)
+  unless document.referrer.match(/instapaper|google|duckduckgo|stackoverflow.com/)
     block "This is your life and it's ending one minute at a time."
