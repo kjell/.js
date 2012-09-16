@@ -5,6 +5,7 @@ $ ->
     $(this).css('opacity', '1')
 
   $(window).keydown (e) ->
+    return if e.shiftKey
     window.location = (switch e.keyCode
       when 37
         $('.post-prev a')
