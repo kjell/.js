@@ -3,21 +3,19 @@ banner = (text) ->
   css({
     width: '20%',
     margin: '10em auto',
-    border: '1em solid #369',
-    'border-radius': '1em',
     padding: '1em 0',
     'text-align': 'center',
-    'background-color': '#eee',
+    # 'background-color': '#eee',
     opacity: '0.3',
     '-webkit-transition': 'all .2s ease-in-out'
   }).hover(
     (->
-      $(this).css {
+      $(@).css {
         opacity: '1',
         '-webkit-transform': 'scale(1.5)',
       }),
     (->
-      $(this).css {
+      $(@).css {
         opacity: '0.3',
         '-webkit-transform': 'scale(1)'
       })
@@ -27,7 +25,7 @@ soft_block = (message) ->
   $("body").hide()
   p = banner(message)
   p.dblclick ->
-    $(this).hide()
+    $(@).hide()
     $("body").show()
   $("body").after(p)
 
@@ -36,11 +34,19 @@ block = (message) ->
   $("body").after banner(message)
 
 time_wasters = "metafilter.com ask.metafilter.com news.ycombinator.com
-reddit.com kottke.org daringfireball.net macrumors.com appleinsider.com
+kottke.org daringfireball.net macrumors.com appleinsider.com
 9to5mac.com hckrnews.com macobserver.com
-hacker-newspaper.gilesb.com techcrunch.com buzzfeed.com "
+hacker-newspaper.gilesb.com techcrunch.com buzzfeed.com
+facebook.com reddit.com inhabitat.com"
+
+inspiration = """Don't ignore your dreams;
+don't work too much;
+say what you think;
+cultivate friendships;
+be happy. <a href="http://paulgraham.com/todo.html">º</a>"""
 
 if time_wasters.indexOf(location.host.replace('www.','')) > -1
   console.log document.referrer
-  unless document.referrer.match(/instapaper|google|duckduckgo|stackoverflow.com/)
-    block "This is your life and it's ending one minute at a time."
+  unless document.referrer.match(/instapaper|google|duckduckgo|stackoverflow/)
+    block inspiration
+    true
