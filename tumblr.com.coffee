@@ -1,4 +1,5 @@
 #= require paginate
+style 'li.sponsored_post', 'display: none'
 
 wait = (time, call) -> setTimeout call, time
 
