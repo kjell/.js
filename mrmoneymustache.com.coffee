@@ -1,8 +1,7 @@
 $ ->
   $(".entry > *:gt(#{$('.entry #apf_post_footer').index()-1})").remove()
   $('.tags').remove()
-  $('#header, #sidebar').css('opacity', '0.1').hover ->
-    $(this).css('opacity', '1')
+  hide_unless_hovered '#header', '#sidebar'
 
   $(window).keydown (e) ->
     return if e.shiftKey

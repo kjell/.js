@@ -6,7 +6,6 @@ $ ->
   ]
   $("#newsletter-ad").hide()
 
-  style('#sidebar > *', 'visibility: hidden')
-  style('#sidebar:hover > *', 'visibility: visible')
+  hide_unless_hovered '#sidebar'
 
 
