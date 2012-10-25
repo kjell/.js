@@ -21,5 +21,8 @@ if window.location.search.match(/\?utm/)
   # and only redirect if that was good, but I'm not smart enough
   # if $.head(url).success ->
     # window.location = url
+
+$('.fb_iframe_widget, .twitter-share-button').remove()
+
 $ ->
   # $('select').filter(-> $('option', this).length > 10).select2()

@@ -37,7 +37,7 @@ time_wasters = "metafilter.com ask.metafilter.com news.ycombinator.com
 kottke.org daringfireball.net macrumors.com appleinsider.com
 9to5mac.com hckrnews.com macobserver.com
 hacker-newspaper.gilesb.com techcrunch.com buzzfeed.com
-facebook.com reddit.com inhabitat.com"
+facebook.com reddit.com inhabitat.com packlite.tumblr.com"
 
 inspiration = """Don't ignore your dreams;
 don't work too much;
