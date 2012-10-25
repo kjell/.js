@@ -1,4 +1,5 @@
 #= require_tree ./default
+#= require vendor/select2.min.js
 
 $("#readabilityContainer").remove()
 
@@ -20,3 +21,5 @@ if window.location.search.match(/\?utm/)
   # and only redirect if that was good, but I'm not smart enough
   # if $.head(url).success ->
     # window.location = url
+$ ->
+  # $('select').filter(-> $('option', this).length > 10).select2()
