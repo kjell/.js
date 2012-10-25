@@ -1,3 +1,6 @@
-unless window.location.search == '?stop' || window.location.pathname == '/'
-# if window.location.pathname.match /episodes/
-  window.location.href =  window.location.href.replace(/rails/, 'ascii')
+unless window.location.search == '?stop' || window.location.search =='?view=asciicast' || window.location.pathname == '/'
+  window.location.search = '?view=asciicast'
+
+$(".nav a[href$='asciicast']").trigger('click');
+
+
