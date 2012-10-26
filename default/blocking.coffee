@@ -47,6 +47,7 @@ be happy. <a href="http://paulgraham.com/todo.html">º</a>"""
 
 if time_wasters.indexOf(location.host.replace('www.','')) > -1
   console.log document.referrer
-  unless document.referrer.match(/instapaper|google|duckduckgo|stackoverflow/)
-    block inspiration
+  unless document.referrer.match(/instapaper|google|duckduckgo|stackoverflow|fontbros/)
+    check = $.get "http://work.dev/pomux"
+    check.success (r) -> block(inspiration) if r.indexOf('m') > 0
     true
