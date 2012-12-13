@@ -1,4 +1,4 @@
-comicize = (image_selector, next_selector) ->
+comicize = (image_selector, next_selector, prev_selector) ->
   $("body").hide()
   (min = $(image_selector).clone().appendTo("html")).css({
     'padding-bottom': "200px",
@@ -9,7 +9,6 @@ comicize = (image_selector, next_selector) ->
   $("html").css {height: '111em'}
 
   $(document).keydown (e) ->
-    console.log e.keyCode
     switch e.keyCode
       when 13, 39
         next = $(next_selector).attr('href')
@@ -18,4 +17,5 @@ comicize = (image_selector, next_selector) ->
         min.hide()
         $('body').show()
       when 37
-        history.go -1
+        prev = $(prev_selector).attr('href')
+        prev? && document.location = prev || history.go -1
