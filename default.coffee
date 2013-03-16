@@ -24,5 +24,4 @@ if window.location.search.match(/\?utm/)
 
 $('.fb_iframe_widget, .twitter-share-button').remove()
 
-$ ->
-  # $('select').filter(-> $('option', this).length > 10).select2()
+style "iframe[id*=dsq]", "display: none"

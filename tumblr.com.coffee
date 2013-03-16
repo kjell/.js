@@ -1,5 +1,4 @@
 #= require paginate
-#= require keymaster
 
 style 'li.sponsored_post', 'display: none'
 

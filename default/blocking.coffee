@@ -37,16 +37,13 @@ time_wasters = "metafilter.com ask.metafilter.com news.ycombinator.com
 kottke.org daringfireball.net hacker-newspaper.gilesb.com techcrunch.com
 buzzfeed.com facebook.com reddit.com inhabitat.com packlite.tumblr.com"
 
-
-
 inspiration = """Don't ignore your dreams;
 don't work too much;
 say what you think;
 cultivate friendships;
-be happy. <a href="http://paulgraham.com/todo.html">º</a>"""
+be happy<a href="http://paulgraham.com/todo.html">.</a>"""
 
 if time_wasters.indexOf(location.host.replace('www.','')) > -1
-  console.log document.referrer
   unless document.referrer.match(/instapaper|google|duckduckgo|stackoverflow|fontbros/)
     check = $.get "http://work.dev/pomux"
     check.success (r) -> block(inspiration) if r.indexOf('m') > 0
