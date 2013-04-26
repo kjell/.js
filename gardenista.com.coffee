@@ -1,1 +1,1 @@
-remodelista.com.coffee
+style '#ad-wrapper', 'display: none'

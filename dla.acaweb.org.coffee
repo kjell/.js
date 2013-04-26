@@ -24,3 +24,4 @@ $ ->
     'ended': (e) ->
       $(@).parents('li:last').next().find('audio')[0].play()
 
+style 'audio', 'max-width: 100%'
