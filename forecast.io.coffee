@@ -1,1 +1,1 @@
-style '.sponsor', 'display: none !important'
+style '.ad, .sponsor', 'display: none !important'

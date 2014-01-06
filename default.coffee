@@ -1,5 +1,4 @@
-#= require_tree ./default
-#= require vendor/select2.min.js
+#= require_tree "./default"
 
 $("#readabilityContainer").remove()
 
@@ -25,3 +24,4 @@ if window.location.search.match(/\?utm/)
 $('.fb_iframe_widget, .twitter-share-button').remove()
 
 style "iframe[id*=dsq]", "display: none"
+style "body > #ntp-contents", "display: none"

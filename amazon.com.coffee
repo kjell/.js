@@ -1,3 +1,6 @@
+at '^/', ->
+  window.location = 'https://smile.amazon.com'
+
 if (reviews = $("#customerReviews")).length
   reviews.insertAfter(".bucketDivider:first")
 
