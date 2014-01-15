@@ -17,3 +17,9 @@ $ ->
   delay 0, ->
     $('img[src*="pinimg.com/192"]').map ->
       @.src = @.src.replace('192x', '736x')
+
+  at '/feeds/new', ->
+    if window.location.hash.length > 0
+      url = window.location.hash.replace('#', '')
+      $('#feed-url').attr('value', url)
+      $('#submit').click()

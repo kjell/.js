@@ -33,21 +33,38 @@ block = (message) ->
   $("body").hide()
   $("body").after banner(message)
 
-time_wasters = "metafilter.com ask.metafilter.com news.ycombinator.com
-kottke.org daringfireball.net hacker-newspaper.gilesb.com techcrunch.com
-buzzfeed.com facebook.com reddit.com inhabitat.com packlite.tumblr.com"
-
 inspiration = """Don't ignore your dreams;
 don't work too much;
 say what you think;
 cultivate friendships;
 be happy<a href="http://paulgraham.com/todo.html">.</a>"""
 
-if time_wasters.indexOf(location.host.replace('www.','')) > -1
-  unless document.referrer.match(/instapaper|google|duckduckgo|stackoverflow|fontbros/)
-    check = $.get "http://work.dev/pomux"
-    check.success (r) -> block(inspiration) if r.indexOf('m') > 0
-    true
+time_wasters = "
+metafilter.com
+ask.metafilter.com
+news.ycombinator.com
+daringfireball.net
+hacker-newspaper.gilesb.com
+techcrunch.com
+buzzfeed.com
+facebook.com
+reddit.com
+inhabitat.com
+packlite.tumblr.com
+macrumors.com
+appleinsider.com
+9to5mac.com
+macobserver.com
+kottke.org"
 
-if """macrumors.com appleinsider.com 9to5mac.com macobserver.com""".indexOf(location.host.replace('www.','')) > -1
-  block(inspiration)
+# block between 8 and 6 for now.
+workday = ->
+  h = (new Date).getHours()
+  8 < h && h < 18
+
+if time_wasters.indexOf(location.host.replace('www.','')) > -1
+  unless document.referrer.match(/instapaper|google|duckduckgo|stackoverflow|pinboard/)
+    if workday()
+      block(inspiration)
+    else
+      console.info inspiration
