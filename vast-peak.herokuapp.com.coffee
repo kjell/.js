@@ -2,7 +2,6 @@ craigslistFlagAsSpamUrl = (url) ->
   _id = url.match(/(\d+)\.html$/)[1]
   'https://post.craigslist.org/flag?flagCode=15&postingID=' + _id
 
-
 $ ->
   # Delete annoying spammy craigslist posts. I can't take them! mattressdepot!
   delay 0, ->

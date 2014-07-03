@@ -1,7 +1,11 @@
 #if window.location.pathname == '/'
 #  style '#contentArea', 'display:none'
 
-hide_unless_hovered '#contentArea', '.rightColumnWrapper', '#pagelet_sidebar', '#pagelet_navigation', '#pagelet_ego_pane', '#pagelet_sidebar', 'div.tickerActivityStories', '#rightCol'
+# hide_unless_hovered '#contentArea', '.rightColumnWrapper', '#pagelet_sidebar', '#pagelet_navigation', '#pagelet_ego_pane', '#pagelet_sidebar', 'div.tickerActivityStories', '#rightCol'
+at '^/', ->
+  hide_even_when_hovered '#stream_pagelet'
+
+hide_even_when_hovered '.rightColumnWrapper', '#pagelet_sidebar', '#pagelet_navigation'
 
 $ ->
   # Remove facebook ads ("this person and this person liked this stupid shit") ("Trending Articles")
