@@ -16,9 +16,17 @@ $ ->
   delay 0, ->
     $('img[src*="pinimg.com/192"]').map ->
       @.src = @.src.replace('192x', '736x')
+    $('img[src*="pinimg.com/236"]').map ->
+      @.src = @.src.replace('236x', '736x')
 
   at '/feeds/new', ->
     if window.location.hash.length > 0
       url = window.location.hash.replace('#', '')
       $('#feed-url').attr('value', url)
       $('#submit').click()
+
+style '.feedflare', 'display: none'
+
+style '.story-body', 'margin-top: 10px;'
+style '.story-body h1', 'display: none;'
+style '.story-body img', 'max-height: 96vh;'
