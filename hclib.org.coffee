@@ -1,16 +1,19 @@
 $ ->
-  at 'pub/info/locations.cfm', ->
-    $("#showMap + table").
-      prepend($('<tr bgcolor="#ffffff"><td></td></tr>')).
-      prepend($("#showMap + table tr:nth-child(7)")).
-      prepend($("#showMap + table tr:nth-child(3)"))
+  at '^/', ->
+    # activate the searchbox
+    $('#search-ttextbox').attr('tabindex', 0).focus()
+    delay 100, ->
+      $('#search-ttextbox').attr('tabindex', 0).focus()
+    # log me in if I'm not already
+    unless document.cookie.match(/HCLAuthToken/)
+      window.location = 'https://apps.hclib.org/login/index.cfm'
 
-  $("#container").
-    before($('<a id="hours" href="/pub/info/locations.cfm">hours</a>').css({
-      position: 'absolute',
-      left: '0',
-      height: '100%',
-      display: 'block',
-      'text-align': 'center',
-      padding: ($(window).width() - 856)/4
-    }))
+    style '.home-tiles', 'display: none'
+
+  at '^/login/index.cfm', ->
+    $('#accountpin').val(passwords["hclib.org"])
+    delay 0, -> $('#loginform').submit()
+
+  at '/about/locations', ->
+    eastLake = $('.locations-list > .locations-list__item:nth-child(5)')
+    $('.locations-list').prepend(eastLake)
